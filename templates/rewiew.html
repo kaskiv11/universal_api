@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews - Modern 2024 Site</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #121212;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(90deg, #0f4c75, #1a1a2e);
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            font-size: 3rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        nav ul li {
+            font-size: 1.5rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #3282b8;
+            border-color: #0f4c75;
+            transform: scale(1.1);
+        }
+
+        main {
+            margin-top: 80px;
+            width: 90%;
+            max-width: 1200px;
+            text-align: center;
+        }
+
+        .section {
+            margin-top: 50px;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+
+        h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .reviews-section {
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .review {
+            background-color: #1a1a2e;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .review:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .review h3 {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+
+        .review p {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .review-form {
+            background-color: #1a1a2e;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .review-form input, .review-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1.2rem;
+        }
+
+        .review-form button {
+            padding: 12px 30px;
+            background-color: #3282b8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .review-form button:hover {
+            background-color: #1a1a2e;
+            transform: scale(1.05);
+        }
+
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #1a1a2e;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+<header>
+    <div class="logo">
+        <h1>My 2024 Modern Page</h1>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Service</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="rewiew.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="section reviews-section">
+        <h2>Customer Reviews</h2>
+
+        <div class="review" id="review-1">
+            <h3>John Doe</h3>
+            <p>This site is absolutely amazing! The user interface is intuitive, and I found everything I needed in no time.</p>
+        </div>
+        <div class="review" id="review-2">
+            <h3>Jane Smith</h3>
+            <p>The products offered here are top-notch! Great quality, and the support team was very helpful with my queries.</p>
+        </div>
+
+        <div class="review-form">
+            <h2>Leave Your Review</h2>
+            <input type="text" id="name" placeholder="Your name">
+            <textarea id="review" placeholder="Your review" rows="4"></textarea>
+            <button onclick="addReview()"> Submit Review</button>
+        </div>
+    </div>
+
+
+</main>
+
+<footer>
+    <p>&copy; 2024 My Modern Site. All rights reserved.</p>
+</footer>
+
+<script>
+    function addReview() {
+        const name = document.getElementById('name').value;
+        const reviewText = document.getElementById('review').value;
+
+        if (name && reviewText) {
+            // Create a new review element
+            const reviewDiv = document.createElement('div');
+            reviewDiv.className = 'review';
+
+            const reviewHeader = document.createElement('h3');
+            reviewHeader.textContent = name;
+
+            const reviewParagraph = document.createElement('p');
+            reviewParagraph.textContent = reviewText;
+
+            reviewDiv.appendChild(reviewHeader);
+            reviewDiv.appendChild(reviewParagraph);
+
+            // Append the new review to the reviews section
+            const reviewsSection = document.querySelector('.reviews-section');
+            reviewsSection.insertBefore(reviewDiv, document.querySelector('.review-form'));
+
+            // Clear the input fields
+            document.getElementById('name').value = '';
+            document.getElementById('review').value = '';
+        } else {
+            alert('Please fill out both fields.');
+        }
+    }
+</script>
+
+</body>
+
+</html>
