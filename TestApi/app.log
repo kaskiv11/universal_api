@@ -1,0 +1,89 @@
+2024-11-04 16:23:47,468 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-04 16:23:47,469 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-04 16:23:47,472 - werkzeug - INFO -  * Restarting with stat
+2024-11-04 16:23:48,036 - werkzeug - WARNING -  * Debugger is active!
+2024-11-04 16:23:48,041 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-04 16:24:16,007 - __main__ - INFO - New task added with ID 3
+2024-11-04 16:24:16,008 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:24:16] "[35m[1mPOST /api/tasks HTTP/1.1[0m" 201 -
+2024-11-04 16:24:17,006 - __main__ - INFO - New task added with ID 4
+2024-11-04 16:24:17,018 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:24:17] "[35m[1mPOST /api/tasks HTTP/1.1[0m" 201 -
+2024-11-04 16:24:20,174 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:24:20] "GET /api/tasks HTTP/1.1" 200 -
+2024-11-04 16:24:24,670 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:24:24] "DELETE /api/tasks/2 HTTP/1.1" 200 -
+2024-11-04 16:25:02,457 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:25:02] "[35m[1mDELETE /api/tasks/6 HTTP/1.1[0m" 500 -
+2024-11-04 16:29:37,658 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-04 16:29:37,658 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-04 16:29:37,661 - werkzeug - INFO -  * Restarting with stat
+2024-11-04 16:29:38,731 - werkzeug - WARNING -  * Debugger is active!
+2024-11-04 16:29:38,737 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-04 16:29:48,143 - __main__ - INFO - Deleting task appi(api/tasks/<int:task_id>) me  methods=['DELETE']
+2024-11-04 16:29:48,143 - __main__ - INFO - Deleted task with ID 1
+2024-11-04 16:29:48,144 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 16:29:48] "DELETE /api/tasks/1 HTTP/1.1" 200 -
+2024-11-04 18:14:55,800 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-04 18:14:55,801 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-04 18:14:55,807 - werkzeug - INFO -  * Restarting with stat
+2024-11-04 18:14:56,507 - werkzeug - WARNING -  * Debugger is active!
+2024-11-04 18:14:56,524 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-04 18:14:57,568 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 18:14:57] "GET / HTTP/1.1" 200 -
+2024-11-04 18:14:57,766 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 18:14:57] "GET /static/script.js HTTP/1.1" 200 -
+2024-11-04 18:14:57,796 - werkzeug - INFO - 127.0.0.1 - - [04/Nov/2024 18:14:57] "GET /api/tasks HTTP/1.1" 200 -
+2024-11-08 15:21:29,482 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2024-11-08 15:21:29,483 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2024-11-08 15:21:29,489 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:21:30,569 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:21:30,597 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:23:51,204 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:23:51,894 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:23:53,605 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:23:53,625 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:24:16,792 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:24:17,186 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:24:19,024 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:24:19,037 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:24:31,698 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:24:32,107 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:24:33,662 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:24:33,677 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:28:33,627 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:28:34,102 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:28:35,987 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:28:35,994 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:29:11,248 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:29:11,737 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:29:12,822 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:29:12,831 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:41:56,191 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\TestApi\\test_api.py', reloading
+2024-11-08 15:41:56,671 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:41:57,645 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:41:57,660 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:47:22,289 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\operations.py', reloading
+2024-11-08 15:47:22,775 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:47:24,240 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:47:24,256 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:48:41,844 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\operations.py', reloading
+2024-11-08 15:48:42,156 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:48:43,646 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:48:43,655 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:48:46,859 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\operations.py', reloading
+2024-11-08 15:48:47,364 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:48:48,443 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:48:48,448 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:51:27,048 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\operations.py', reloading
+2024-11-08 15:51:27,248 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:51:28,728 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:51:28,743 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:55:37,937 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\test.py', reloading
+2024-11-08 15:55:38,540 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:55:40,197 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:55:40,211 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 15:59:29,941 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\test.py', reloading
+2024-11-08 15:59:30,509 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 15:59:32,093 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 15:59:32,116 - werkzeug - INFO -  * Debugger PIN: 980-699-689
+2024-11-08 16:02:22,415 - werkzeug - INFO -  * Detected change in 'D:\\My\\workTeacher\\individual\\universal_api_NIKITA\\unit_test\\test.py', reloading
+2024-11-08 16:02:23,022 - werkzeug - INFO -  * Restarting with stat
+2024-11-08 16:02:24,911 - werkzeug - WARNING -  * Debugger is active!
+2024-11-08 16:02:24,917 - werkzeug - INFO -  * Debugger PIN: 980-699-689
