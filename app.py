@@ -42,6 +42,59 @@ def register():
     return render_template("registration.html")
 
 
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        try:
+            db = mysql.connector.connect(**db_config)
+            cursor = db.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+            cursor.close()
+            db.close()
+
+            if user and check_password_hash(user['password'], password):
+                session['user_id'] = user['id']
+                session['username'] = user['username']
+                flash('Login successful!', 'success')
+                return redirect('/')
+            else:
+                flash('Invalid email or password.', 'danger')
+        except mysql.connector.Error as err:
+            flash(f"Database error: {err}", 'danger')
+
+    return render_template('login.html')
+
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        email = request.form['email']
+        password = request.form['password']
+
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor(dictionary=True)
+            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
+            user = cursor.fetchone()
+            cursor.close()
+            conn.close()
+
+            if user and bcrypt.check_password_hash(user['password'], password):
+                session['user_id'] = user['id']
+                session['username'] = user['username']
+                flash('Login successful!', 'success')
+                return redirect('/')
+            else:
+                flash('Invalid email or password.', 'danger')
+        except mysql.connector.Error as err:
+            flash(f"Database error: {err}", 'danger')
+
+    return render_template('login.html')
+
+
 @app.route('/leave_review', methods=['GET', 'POST'])
 def leave_review():
     if 'user_id' not in session:
@@ -73,6 +126,7 @@ def logout():
     session.clear()
     flash("You have been logged out.", "info")
     return redirect(url_for("login"))
+
 
 if __name__ == '__main__':
     app.run(debug=True)
