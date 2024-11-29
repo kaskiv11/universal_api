@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, request, url_for, render_template,  flash, redirect, session
+from flask import Flask, jsonify, request, url_for, render_template, flash, redirect, session
 from flask_bcrypt import Bcrypt
 import mysql.connector
 
@@ -6,15 +6,17 @@ app = Flask(__name__)
 app.secret_key = "your_secret_key"
 bcrypt = Bcrypt(app)
 
+# Database Configuration
 db_config = {
     "host": "localhost",
     "user": "root",
-    "password": "pass",
+    "password": "tuzeru2001",
     "database": "api_web"
 }
 
 
 def get_db_connection():
+
     return mysql.connector.connect(**db_config)
 
 
@@ -22,51 +24,27 @@ def get_db_connection():
 def register():
     if request.method == 'POST':
         username = request.form['username']
-        email = request.form.get("email")
-        password = request.form.get("password")
+        email = request.form['email']
+        password = request.form['password']
+
+        # Hash the password
         hashed_password = bcrypt.generate_password_hash(password).decode('utf-8')
 
         try:
             conn = get_db_connection()
             cursor = conn.cursor()
             cursor.execute("""
-            INSERT INTO users (username, email, password) VALUES (%s, %s, %s)
+                INSERT INTO users (username, email, password) VALUES (%s, %s, %s)
             """, (username, email, hashed_password))
-
             conn.commit()
             cursor.close()
-            flash("Registration successful", "success")
+            conn.close()
+            flash("Registration successful!", "success")
             return redirect(url_for('login'))
         except mysql.connector.IntegrityError as e:
-            flash(str(e), "danger")
+            flash(f"Error: {str(e)}", "danger")
     return render_template("registration.html")
 
-
-@app.route('/login', methods=['GET', 'POST'])
-def login():
-    if request.method == 'POST':
-        email = request.form['email']
-        password = request.form['password']
-
-        try:
-            db = mysql.connector.connect(**db_config)
-            cursor = db.cursor(dictionary=True)
-            cursor.execute("SELECT * FROM users WHERE email = %s", (email,))
-            user = cursor.fetchone()
-            cursor.close()
-            db.close()
-
-            if user and check_password_hash(user['password'], password):
-                session['user_id'] = user['id']
-                session['username'] = user['username']
-                flash('Login successful!', 'success')
-                return redirect('/')
-            else:
-                flash('Invalid email or password.', 'danger')
-        except mysql.connector.Error as err:
-            flash(f"Database error: {err}", 'danger')
-
-    return render_template('login.html')
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -81,6 +59,9 @@ def login():
             user = cursor.fetchone()
             cursor.close()
             conn.close()
+
+            # Debugging output
+            print("Retrieved User:", user)
 
             if user and bcrypt.check_password_hash(user['password'], password):
                 session['user_id'] = user['id']
@@ -105,18 +86,20 @@ def leave_review():
         content = request.form['content']
         user_id = session['user_id']
 
-        conn = get_db_connection()
-        cursor = conn.cursor()
-        cursor.execute("""
-            INSERT INTO reviews (user_id, content) 
-            VALUES (%s, %s)
-        """, (user_id, content))
-        conn.commit()
-        cursor.close()
-        conn.close()
+        try:
+            conn = get_db_connection()
+            cursor = conn.cursor()
+            cursor.execute("""
+                INSERT INTO reviews (user_id, content) VALUES (%s, %s)
+            """, (user_id, content))
+            conn.commit()
+            cursor.close()
+            conn.close()
 
-        flash("Your review has been successfully saved!", "success")
-        return redirect(url_for('leave_review'))
+            flash("Your review has been successfully saved!", "success")
+            return redirect(url_for('leave_review'))
+        except mysql.connector.Error as err:
+            flash(f"Error: {err}", "danger")
 
     return render_template('leave_review.html')
 
